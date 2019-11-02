@@ -5,8 +5,6 @@ public class PlayerMovement : MonoBehaviour
     // Varaibles
     bool wasJustClicked = true;
     bool canMove;
-    // Used for how big the sprite is 
-    Vector2 playerSize;
 
     Rigidbody2D rb;
 
@@ -14,11 +12,13 @@ public class PlayerMovement : MonoBehaviour
     public Transform BoundaryHolder;
     Boundary playerBoundary;
 
+    Collider2D playerCollider;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        playerSize = GetComponent<SpriteRenderer>().bounds.extents;
+        playerCollider = GetComponent<Collider2D>();
         // Asigning Rigidbody to game object this script set on.
         rb = GetComponent<Rigidbody2D>();
         //Setting the boundary cords of the child game objects when the game starts.
@@ -42,10 +42,7 @@ public class PlayerMovement : MonoBehaviour
                 wasJustClicked = false;
 
                 // If the player asset was clicked from inside the transform axis the player can then move.
-                if ((mousePos.x >= transform.position.x && mousePos.x < transform.position.x + playerSize.x ||
-                mousePos.x <= transform.position.x && mousePos.x > transform.position.x - playerSize.x) &&
-                (mousePos.y >= transform.position.y && mousePos.y < transform.position.y + playerSize.y ||
-                mousePos.y <= transform.position.y && mousePos.y > transform.position.y - playerSize.y))
+                if(playerCollider.OverlapPoint(mousePos))
                 {
                     canMove = true;
                 }
