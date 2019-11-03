@@ -1,5 +1,9 @@
 ﻿using UnityEngine;
 
+/* Cathal Butler | G00346889 | Mobile Applcation Development 3 Project.
+ * PlayerMovment class. This class handles the behaviour of how the player can move in the field.
+ */
+
 public class PlayerMovement : MonoBehaviour
 {
     // Varaibles
@@ -7,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     bool canMove;
 
     Rigidbody2D rb;
+    Vector2 startingPosition;
 
     // Boundary Holder to apply the game object boundary holder to this PlayerMovement Script:  
     public Transform BoundaryHolder;
@@ -21,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
         playerCollider = GetComponent<Collider2D>();
         // Asigning Rigidbody to game object this script set on.
         rb = GetComponent<Rigidbody2D>();
+        startingPosition = rb.position;
         //Setting the boundary cords of the child game objects when the game starts.
         // Used to keep the player pusher object inside the boundary.
         playerBoundary = new Boundary(BoundaryHolder.GetChild(0).position.y,
@@ -67,4 +73,9 @@ public class PlayerMovement : MonoBehaviour
             wasJustClicked = true;
         }// End else
     }// End Update Function
+
+    public void ResetPosition()
+    {
+        rb.position = startingPosition;
+    }
 }// End class

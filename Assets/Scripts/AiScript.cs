@@ -1,6 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+
+/* Cathal Butler | G00346889 | Mobile Applcation Development 3 Project.
+ * AiScript class. This class handles the behaviour of the AI player.
+ */
 
 public class AiScript : MonoBehaviour
 {
@@ -75,4 +77,10 @@ public class AiScript : MonoBehaviour
                                                 movementSpeed * Time.fixedDeltaTime));
         }// end if
     }// End FixedUpdate Function
+
+    // Function the reset the position of the ai pusher:
+    public void ResetPosition()
+    {
+        rb.position = startingPosition;
+    }// End reset function
 }// End class
