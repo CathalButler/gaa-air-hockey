@@ -14,6 +14,7 @@ public class MenuManager : MonoBehaviour
     {
         //Load main game sence:
         SceneManager.LoadScene("main");
+
     }//End play function
 
     public void Quit()

@@ -58,6 +58,7 @@ public class UiManager : MonoBehaviour
         Time.timeScale = 0;
         // Hide game canvas:
         GameCanvas.SetActive(false);
+        
         // Display Pause canvas
         PauseCanvas.SetActive(true);
 
@@ -83,7 +84,7 @@ public class UiManager : MonoBehaviour
         GameCanvas.SetActive(true);
         // Hide Restart canvas:
         RestartCanvas.SetActive(false);
-        //Hide Pasus Canvas if it was enabled
+        //Hide Pasus Canvas if it was enabled 
         PauseCanvas.SetActive(false);
         //Reset scores:
         scoreScript.ResetScores();
