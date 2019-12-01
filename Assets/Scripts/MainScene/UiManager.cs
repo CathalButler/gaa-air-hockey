@@ -10,6 +10,7 @@ public class UiManager : MonoBehaviour
     [Header("Canvas")]
     public GameObject GameCanvas;
     public GameObject RestartCanvas;
+    public GameObject PauseCanvas;
 
     [Header("Restart Canvas")]
     public GameObject WinText;
@@ -50,6 +51,29 @@ public class UiManager : MonoBehaviour
         }
     }// End function
 
+    // Function that will display the pause canvas menu
+    public void ShowPauseCanvas()
+    {
+        // Freeze the game:
+        Time.timeScale = 0;
+        // Hide game canvas:
+        GameCanvas.SetActive(false);
+        // Display Pause canvas
+        PauseCanvas.SetActive(true);
+
+    }//End function
+
+    //Function that allows the game to be resumes from the pause menu 
+    public void ResumeGame()
+    {
+        // Contiune game
+        Time.timeScale = 1;
+        //Display Game Canvas
+        GameCanvas.SetActive(true);
+        //Hide Pause Canvas
+        PauseCanvas.SetActive(false);
+    }//End function
+
     public void RestartGame()
     {
         // Unfreeze game:
@@ -59,6 +83,8 @@ public class UiManager : MonoBehaviour
         GameCanvas.SetActive(true);
         // Hide Restart canvas:
         RestartCanvas.SetActive(false);
+        //Hide Pasus Canvas if it was enabled
+        PauseCanvas.SetActive(false);
         //Reset scores:
         scoreScript.ResetScores();
         //Recenter the puck to the center of the field:
