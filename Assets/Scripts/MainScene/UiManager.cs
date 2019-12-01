@@ -26,7 +26,7 @@ public class UiManager : MonoBehaviour
     // This function is called from score script once 5 goels by either player or ai has been scored:
     public void ShowRestartCanvas(bool didAiWin)
     {
-        // Freese the game:
+        // Freeze the game:
         Time.timeScale = 0;
         // Hide game canvas:
         GameCanvas.SetActive(false);
