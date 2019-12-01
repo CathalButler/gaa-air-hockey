@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /* Cathal Butler | G00346889 | Mobile Applcation Development 3 Project.
  * UiManager class. This class handles the behaviour of the game canvas and restart canvas.
@@ -65,5 +66,13 @@ public class UiManager : MonoBehaviour
         //Reset player and Ai positions:
         playerMovement.ResetPosition();
         aiScript.ResetPosition();
+
+
     }// End function
-}
+
+    //Function that will load menu scene, this will be used if the menu button is pressed in end game menu or pause menu
+    public void ReturnToMainMenu()
+    {
+        SceneManager.LoadScene("menu");
+    }//End function
+}//End class
