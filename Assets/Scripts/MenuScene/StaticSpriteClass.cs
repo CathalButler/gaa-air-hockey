@@ -6,10 +6,12 @@
  * https://stackoverflow.com/questions/42393259/load-scene-with-param-variable-unity
  */
 
+using UnityEngine;
+
 namespace MenuScene
 {
-    public static class StaticClass
+    public static class StaticSpriteClass
     {   
-        public static string CrossSceneInformation { get; set; }
+        public static Sprite CrossSceneInformation { get; set; }
     }
 }

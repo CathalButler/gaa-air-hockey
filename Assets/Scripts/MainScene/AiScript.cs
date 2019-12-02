@@ -50,34 +50,35 @@ public class AiScript : MonoBehaviour
     }// End start function
 
     private void FixedUpdate()
-    {
-        if (!PuckScript.WasGoal)
+    {    
+        //Return if a goal was scored
+        if (PuckScript.WasGoal) return;
+        
+        //Variables
+        float movementSpeed;
+        // If the puck is on the other half of the playing field, only move along the xais:
+        if (puck.position.y < _puckBoundary.Down)
         {
-            float movementSpeed;
-            // If the puck is on the other half of the playing field, only move along the xais:
-            if (puck.position.y < _puckBoundary.Down)
-            {
-                // Setting the movement speed randomly:
-                movementSpeed = maxMovementSpeed * Random.Range(0.1f, 0.3f);
-                // Setting the target position:
-                _targetPosition = new Vector2(Mathf.Clamp(puck.position.x, _playerBoundary.Left,
-                                                        _playerBoundary.Right),
-                                                        _startingPosition.y);
-            }
-            else
-            {
-                movementSpeed = Random.Range(maxMovementSpeed * 0.4f, maxMovementSpeed);
-                _targetPosition = new Vector2(Mathf.Clamp(puck.position.x, _playerBoundary.Left,
-                                                        _playerBoundary.Right),
-                                                        Mathf.Clamp(puck.position.y, _playerBoundary.Down,
-                                                        _playerBoundary.Up));
-            }// End if else
+            // Setting the movement speed randomly:
+            movementSpeed = maxMovementSpeed * Random.Range(0.1f, 0.3f);
+            // Setting the target position:
+            _targetPosition = new Vector2(Mathf.Clamp(puck.position.x, _playerBoundary.Left,
+                    _playerBoundary.Right),
+                _startingPosition.y);
+        }
+        else
+        {
+            movementSpeed = Random.Range(maxMovementSpeed * 0.4f, maxMovementSpeed);
+            _targetPosition = new Vector2(Mathf.Clamp(puck.position.x, _playerBoundary.Left,
+                    _playerBoundary.Right),
+                Mathf.Clamp(puck.position.y, _playerBoundary.Down,
+                    _playerBoundary.Up));
+        }// End if else
 
-            // Making the Ai move the distance of movement speed over the course of 1 second. 
-            // This stops the AI pusher jumping stright to the puck.
-            _rb.MovePosition(Vector2.MoveTowards(_rb.position, _targetPosition,
-                                                movementSpeed * Time.fixedDeltaTime));
-        }// end if
+        // Making the Ai move the distance of movement speed over the course of 1 second. 
+        // This stops the AI pusher jumping stright to the puck.
+        _rb.MovePosition(Vector2.MoveTowards(_rb.position, _targetPosition,
+            movementSpeed * Time.fixedDeltaTime));
     }// End FixedUpdate Function
 
     // Function the reset the position of the ai pusher:

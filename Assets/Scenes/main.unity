@@ -1501,10 +1501,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7922a67ae5412dc11b17a1e7b9ed2e81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AiScoreText: {fileID: 426584785}
-  PlayerScoreText: {fileID: 122887568}
+  aiScoreText: {fileID: 426584785}
+  playerScoreText: {fileID: 122887568}
   uiManager: {fileID: 496550626}
-  MaxScore: 2
+  maxScore: 2
 --- !u!4 &496550625
 Transform:
   m_ObjectHideFlags: 0
@@ -1531,11 +1531,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3672bce19e071ad7d9ef979fd79f8fd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameCanvas: {fileID: 1705501958}
-  RestartCanvas: {fileID: 809518898}
-  PauseCanvas: {fileID: 1412088583}
-  WinText: {fileID: 343344160}
-  LooseText: {fileID: 379228247}
+  gameCanvas: {fileID: 1705501958}
+  restartCanvas: {fileID: 809518898}
+  pauseCanvas: {fileID: 1412088583}
+  winText: {fileID: 343344160}
+  looseText: {fileID: 379228247}
   scoreScript: {fileID: 496550624}
   puckScript: {fileID: 1415359972}
   playerMovement: {fileID: 1281294101}
@@ -2566,7 +2566,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0027832b1061ee1369a7c07322821c31, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2574,7 +2574,7 @@ SpriteRenderer:
   m_Size: {x: 1.25, y: 1.25}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1281294100
@@ -2603,7 +2603,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30ebc913f122b92c8801cfe7ddaa950e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BoundaryHolder: {fileID: 1683772302}
+  boundaryHolder: {fileID: 1683772302}
+  mayo: {fileID: 21300000, guid: 4e1297892e77900dbb9577a0df7fe2b9, type: 3}
+  dublin: {fileID: 21300000, guid: 0027832b1061ee1369a7c07322821c31, type: 3}
+  meath: {fileID: 21300000, guid: d73990ac9bb542157a86c21e02af15d0, type: 3}
+  roscommon: {fileID: 21300000, guid: c82154b8ec96fc8f0ad462a7ef83428f, type: 3}
+  donegal: {fileID: 21300000, guid: a32eaa6d16f2e22f4aea19b886df2033, type: 3}
+  tyrone: {fileID: 21300000, guid: 404865b59b71458de9c015092a53b694, type: 3}
+  kerry: {fileID: 21300000, guid: 91c3928c47dd3d6d880d02cdf2f11391, type: 3}
+  cork: {fileID: 21300000, guid: 756ddfea9ffbf59d991984d37d1d5a69, type: 3}
 --- !u!58 &1281294102
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3057,7 +3065,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1659845418e6e091fa545e39ae4f2b6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ScoreScriptInstance: {fileID: 496550624}
+  scoreScriptInstance: {fileID: 496550624}
   maxSpeed: 20
 --- !u!1 &1423497946
 GameObject:
@@ -3950,10 +3958,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 352b124a8651ebf8fbfa7dc3bf27fef9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxMovementSpeed: 20
-  Puck: {fileID: 1415359971}
-  PlayerBoundaryHolder: {fileID: 1943325461}
-  PuckBoundaryHolder: {fileID: 1635407994}
+  maxMovementSpeed: 20
+  puck: {fileID: 1415359971}
+  playerBoundaryHolder: {fileID: 1943325461}
+  puckBoundaryHolder: {fileID: 1635407994}
 --- !u!1 &1686815063
 GameObject:
   m_ObjectHideFlags: 0

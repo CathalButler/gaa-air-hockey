@@ -11,7 +11,7 @@ namespace MainScene
 {
     public class PlayerMovement : MonoBehaviour
     {
-        // Varaibles
+        // Member Variables
         private bool _wasJustClicked = true;
         private bool _canMove;
 
@@ -21,28 +21,22 @@ namespace MainScene
         // Boundary Holder to apply the game object boundary holder to this PlayerMovement Script:  
         [FormerlySerializedAs("BoundaryHolder")] public Transform boundaryHolder;
         private Boundary _playerBoundary;
-
+        
         private Collider2D _playerCollider;
-
-        private SpriteRenderer rend;
-        private Sprite _mayo, _dublin, _meath, _roscommon, _donegal, _tyrone, _kerry, _cork;
-
-
+        
+        private SpriteRenderer _spriteRenderer; 
+        
         // Start is called before the first frame update
         private void Start()
         {
-
-            Debug.Log(StaticClass.CrossSceneInformation);
-
-            rend = GetComponent<SpriteRenderer>();
-
-            //mayo = Resources.Load<Sprite>("MayoPusher");
-
-            //TODO: Add sprite rendering to this function as its neeed for the player pusher then assign collider2D to it and boundary
-            //mayo = Color.blue;
-
+            // Accessing the SpriteRenderer that is attached to the Gameobject
+            _spriteRenderer = GetComponent<SpriteRenderer>();
+            // Assign the sprite passed when loading main scene
+            _spriteRenderer.sprite = StaticSpriteClass.CrossSceneInformation;
+            
+            //Accessing Collider2D attached to the Gameobject
             _playerCollider = GetComponent<Collider2D>();    
-            // Asigning Rigidbody to game object this script set on.
+            // Assigning Rigidbody to game object this script set on.
             _rb = GetComponent<Rigidbody2D>();
             _startingPosition = _rb.position;
             //Setting the boundary cords of the child game objects when the game starts.
@@ -52,7 +46,6 @@ namespace MainScene
                 boundaryHolder.GetChild(2).position.x,
                 boundaryHolder.GetChild(3).position.x);
 
-
         }// End start
 
         // Update is called once per frame
@@ -60,6 +53,7 @@ namespace MainScene
         {
             if (Input.GetMouseButton(0))
             {
+                //Setting world cords
                 Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
                 if (_wasJustClicked)
@@ -91,14 +85,10 @@ namespace MainScene
             }// End else
         }// End Update Function
 
+        //Function which will reset the puck to the starting position when the game restarts 
         public void ResetPosition()
         {
             _rb.position = _startingPosition;
-        }
-
-        public void GetTeamSprite()
-        {
-
-        }
-    }
-}// End class
+        }//End function
+    }//End class
+}// End namespace
