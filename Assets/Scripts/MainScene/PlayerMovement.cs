@@ -1,100 +1,104 @@
-﻿using UnityEngine;
+﻿using MenuScene;
+using Types;
+using UnityEngine;
+using UnityEngine.Serialization;
 
 /* Cathal Butler | G00346889 | Mobile Applcation Development 3 Project.
- * PlayerMovment class. This class handles the behaviour of how the player can move in the field.
+ * PlayerMovement class. This class handles the behaviour of how the player can move in the field.
  */
 
-public class PlayerMovement : MonoBehaviour
+namespace MainScene
 {
-    // Varaibles
-    bool wasJustClicked = true;
-    bool canMove;
-
-    Rigidbody2D rb;
-    Vector2 startingPosition;   
-
-    // Boundary Holder to apply the game object boundary holder to this PlayerMovement Script:  
-    public Transform BoundaryHolder;
-    Boundary playerBoundary;
-
-    Collider2D playerCollider;
-
-    SpriteRenderer rend;
-    Sprite mayo, dublin, meath, roscommon, donegal, tyrone, kerry, cork;
-
-
-    // Start is called before the first frame update
-    void Start()
+    public class PlayerMovement : MonoBehaviour
     {
+        // Varaibles
+        private bool _wasJustClicked = true;
+        private bool _canMove;
 
-        Debug.Log(StaticClass.CrossSceneInformation);
+        private Rigidbody2D _rb;
+        private Vector2 _startingPosition;   
 
-        rend = GetComponent<SpriteRenderer>();
+        // Boundary Holder to apply the game object boundary holder to this PlayerMovement Script:  
+        [FormerlySerializedAs("BoundaryHolder")] public Transform boundaryHolder;
+        private Boundary _playerBoundary;
 
-        //mayo = Resources.Load<Sprite>("MayoPusher");
+        private Collider2D _playerCollider;
 
-        //TODO: Add sprite rendering to this function as its neeed for the player pusher then assign collider2D to it and boundary
-        //mayo = Color.blue;
-
-        playerCollider = GetComponent<Collider2D>();    
-        // Asigning Rigidbody to game object this script set on.
-        rb = GetComponent<Rigidbody2D>();
-        startingPosition = rb.position;
-        //Setting the boundary cords of the child game objects when the game starts.
-        // Used to keep the player pusher object inside the boundary.
-        playerBoundary = new Boundary(BoundaryHolder.GetChild(0).position.y,
-                                        BoundaryHolder.GetChild(1).position.y,
-                                        BoundaryHolder.GetChild(2).position.x,
-                                        BoundaryHolder.GetChild(3).position.x);
+        private SpriteRenderer rend;
+        private Sprite _mayo, _dublin, _meath, _roscommon, _donegal, _tyrone, _kerry, _cork;
 
 
-    }// End start
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetMouseButton(0))
+        // Start is called before the first frame update
+        private void Start()
         {
-            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            if (wasJustClicked)
+            Debug.Log(StaticClass.CrossSceneInformation);
+
+            rend = GetComponent<SpriteRenderer>();
+
+            //mayo = Resources.Load<Sprite>("MayoPusher");
+
+            //TODO: Add sprite rendering to this function as its neeed for the player pusher then assign collider2D to it and boundary
+            //mayo = Color.blue;
+
+            _playerCollider = GetComponent<Collider2D>();    
+            // Asigning Rigidbody to game object this script set on.
+            _rb = GetComponent<Rigidbody2D>();
+            _startingPosition = _rb.position;
+            //Setting the boundary cords of the child game objects when the game starts.
+            // Used to keep the player pusher object inside the boundary.
+            _playerBoundary = new Boundary(boundaryHolder.GetChild(0).position.y,
+                boundaryHolder.GetChild(1).position.y,
+                boundaryHolder.GetChild(2).position.x,
+                boundaryHolder.GetChild(3).position.x);
+
+
+        }// End start
+
+        // Update is called once per frame
+        private void Update()
+        {
+            if (Input.GetMouseButton(0))
             {
-                wasJustClicked = false;
+                Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-                // If the player asset was clicked from inside the transform axis the player can then move.
-                if (playerCollider.OverlapPoint(mousePos))
+                if (_wasJustClicked)
                 {
-                    canMove = true;
-                }
-                else
-                {
-                    // If it is not within the assets transform axis then the player cannot move.
-                    canMove = false;
-                }// End if else for can move when clicked
-            }// End if
+                    _wasJustClicked = false;
 
-            if (canMove)
+                    // If the player asset was clicked from inside the transform axis the player can then move.
+                    if (_playerCollider.OverlapPoint(mousePos))
+                    {
+                        _canMove = true;
+                    }
+                    else
+                    {
+                        // If it is not within the assets transform axis then the player cannot move.
+                        _canMove = false;
+                    }// End if else for can move when clicked
+                }// End if
+
+                if (!_canMove) return;
+                Vector2 clampedMousePos = new Vector2(Mathf.Clamp(mousePos.x, _playerBoundary.Left,
+                        _playerBoundary.Right),
+                    Mathf.Clamp(mousePos.y, _playerBoundary.Down,
+                        _playerBoundary.Up));
+                _rb.MovePosition(clampedMousePos);
+            }
+            else
             {
-                Vector2 clampedMousePos = new Vector2(Mathf.Clamp(mousePos.x, playerBoundary.Left,
-                                                                                playerBoundary.Right),
-                                                    Mathf.Clamp(mousePos.y, playerBoundary.Down,
-                                                                                playerBoundary.Up));
-                rb.MovePosition(clampedMousePos);
-            }// End if
+                _wasJustClicked = true;
+            }// End else
+        }// End Update Function
+
+        public void ResetPosition()
+        {
+            _rb.position = _startingPosition;
         }
-        else
+
+        public void GetTeamSprite()
         {
-            wasJustClicked = true;
-        }// End else
-    }// End Update Function
 
-    public void ResetPosition()
-    {
-        rb.position = startingPosition;
-    }
-
-    public void getTeamSprite()
-    {
-
+        }
     }
 }// End class

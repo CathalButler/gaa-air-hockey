@@ -1,5 +1,7 @@
-﻿using UnityEngine;
+﻿using MainScene;
+using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 /* Cathal Butler | G00346889 | Mobile Applcation Development 3 Project.
  * UiManager class. This class handles the behaviour of the game canvas and restart canvas.
@@ -7,14 +9,14 @@ using UnityEngine.SceneManagement;
 
 public class UiManager : MonoBehaviour
 {
-    [Header("Canvas")]
-    public GameObject GameCanvas;
-    public GameObject RestartCanvas;
-    public GameObject PauseCanvas;
+    [FormerlySerializedAs("GameCanvas")] [Header("Canvas")]
+    public GameObject gameCanvas;
+    [FormerlySerializedAs("RestartCanvas")] public GameObject restartCanvas;
+    [FormerlySerializedAs("PauseCanvas")] public GameObject pauseCanvas;
 
-    [Header("Restart Canvas")]
-    public GameObject WinText;
-    public GameObject LooseText;
+    [FormerlySerializedAs("WinText")] [Header("Restart Canvas")]
+    public GameObject winText;
+    [FormerlySerializedAs("LooseText")] public GameObject looseText;
 
     [Header("Other")]
     public ScoreScript scoreScript;
@@ -31,23 +33,23 @@ public class UiManager : MonoBehaviour
         // Freeze the game:
         Time.timeScale = 0;
         // Hide game canvas:
-        GameCanvas.SetActive(false);
+        gameCanvas.SetActive(false);
         // Show restart canvas:
-        RestartCanvas.SetActive(true);
+        restartCanvas.SetActive(true);
 
         if (didAiWin)
         {
             // Hide win text as player did not win, the ai did:
-            WinText.SetActive(false);
+            winText.SetActive(false);
             // Show loose text as player lost agents ai:
-            LooseText.SetActive(true);
+            looseText.SetActive(true);
         }
         else
         {
             // Show win text as the player won agent the ai:
-            WinText.SetActive(true);
+            winText.SetActive(true);
             // Hide loose text
-            LooseText.SetActive(false);
+            looseText.SetActive(false);
         }
     }// End function
 
@@ -57,10 +59,10 @@ public class UiManager : MonoBehaviour
         // Freeze the game:
         Time.timeScale = 0;
         // Hide game canvas:
-        GameCanvas.SetActive(false);
+        gameCanvas.SetActive(false);
 
         // Display Pause canvas
-        PauseCanvas.SetActive(true);
+        pauseCanvas.SetActive(true);
 
     }//End function
 
@@ -70,9 +72,9 @@ public class UiManager : MonoBehaviour
         // Contiune game
         Time.timeScale = 1;
         //Display Game Canvas
-        GameCanvas.SetActive(true);
+        gameCanvas.SetActive(true);
         //Hide Pause Canvas
-        PauseCanvas.SetActive(false);
+        pauseCanvas.SetActive(false);
     }//End function
 
     public void RestartGame()
@@ -81,11 +83,11 @@ public class UiManager : MonoBehaviour
         Time.timeScale = 1;
 
         // Show game canvas:
-        GameCanvas.SetActive(true);
+        gameCanvas.SetActive(true);
         // Hide Restart canvas:
-        RestartCanvas.SetActive(false);
+        restartCanvas.SetActive(false);
         //Hide Pasus Canvas if it was enabled 
-        PauseCanvas.SetActive(false);
+        pauseCanvas.SetActive(false);
         //Reset scores:
         scoreScript.ResetScores();
         //Recenter the puck to the center of the field:
@@ -93,8 +95,6 @@ public class UiManager : MonoBehaviour
         //Reset player and Ai positions:
         playerMovement.ResetPosition();
         aiScript.ResetPosition();
-
-
     }// End function
 
     //Function that will load menu scene, this will be used if the menu button is pressed in end game menu or pause menu

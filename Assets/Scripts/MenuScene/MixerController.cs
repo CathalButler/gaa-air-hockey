@@ -1,15 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Audio;
 
-
-public class MixerController : MonoBehaviour
+namespace MenuScene
 {
-    public AudioMixer audioMixer;
-
-    public void SetMasterAudio(float volume)
+    public class MixerController : MonoBehaviour
     {
-        audioMixer.SetFloat("MyExposedParam", volume);
+        public AudioMixer audioMixer;
+
+        public void SetMasterAudio(float volume)
+        {
+            audioMixer.SetFloat("MyExposedParam", volume);
+        }
     }
 }

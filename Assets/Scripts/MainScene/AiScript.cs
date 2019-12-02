@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using Types;
+using UnityEngine;
+using UnityEngine.Serialization;
 
 /* Cathal Butler | G00346889 | Mobile Applcation Development 3 Project.
  * AiScript class. This class handles the behaviour of the AI player.
@@ -7,44 +9,44 @@
 public class AiScript : MonoBehaviour
 {
 
-    public float MaxMovementSpeed;
+    [FormerlySerializedAs("MaxMovementSpeed")] public float maxMovementSpeed;
     // AI Rigidbody
-    private Rigidbody2D rb;
+    private Rigidbody2D _rb;
     // AI Starting position
-    private Vector2 startingPosition;
+    private Vector2 _startingPosition;
 
-    public Rigidbody2D Puck;
+    [FormerlySerializedAs("Puck")] public Rigidbody2D puck;
 
     // AI Player boundary holder
-    public Transform PlayerBoundaryHolder;
+    [FormerlySerializedAs("PlayerBoundaryHolder")] public Transform playerBoundaryHolder;
     // AI Player boundary
-    private Boundary playerBoundary;
+    private Boundary _playerBoundary;
 
 
-    public Transform PuckBoundaryHolder;
-    private Boundary puckBoundary;
+    [FormerlySerializedAs("PuckBoundaryHolder")] public Transform puckBoundaryHolder;
+    private Boundary _puckBoundary;
 
-    private Vector2 targetPosition;
+    private Vector2 _targetPosition;
 
     // Start is called before the first frame update
     private void Start()
     {
         // Setting the rigidbody to the player rigidbody
-        rb = GetComponent<Rigidbody2D>();
+        _rb = GetComponent<Rigidbody2D>();
         // Setting the starting position to the player rigidbody
-        startingPosition = rb.position;
+        _startingPosition = _rb.position;
 
         // Setting the boundary cords of the child game objects when the game starts.
         // Used to keep the player pusher object inside the boundary.
-        playerBoundary = new Boundary(PlayerBoundaryHolder.GetChild(0).position.y,
-                                        PlayerBoundaryHolder.GetChild(1).position.y,
-                                        PlayerBoundaryHolder.GetChild(2).position.x,
-                                        PlayerBoundaryHolder.GetChild(3).position.x);
+        _playerBoundary = new Boundary(playerBoundaryHolder.GetChild(0).position.y,
+                                        playerBoundaryHolder.GetChild(1).position.y,
+                                        playerBoundaryHolder.GetChild(2).position.x,
+                                        playerBoundaryHolder.GetChild(3).position.x);
         // Used to keep the puck object inside the boundary.
-        puckBoundary = new Boundary(PuckBoundaryHolder.GetChild(0).position.y,
-                                       PuckBoundaryHolder.GetChild(1).position.y,
-                                       PuckBoundaryHolder.GetChild(2).position.x,
-                                       PuckBoundaryHolder.GetChild(3).position.x);
+        _puckBoundary = new Boundary(puckBoundaryHolder.GetChild(0).position.y,
+                                       puckBoundaryHolder.GetChild(1).position.y,
+                                       puckBoundaryHolder.GetChild(2).position.x,
+                                       puckBoundaryHolder.GetChild(3).position.x);
     }// End start function
 
     private void FixedUpdate()
@@ -53,27 +55,27 @@ public class AiScript : MonoBehaviour
         {
             float movementSpeed;
             // If the puck is on the other half of the playing field, only move along the xais:
-            if (Puck.position.y < puckBoundary.Down)
+            if (puck.position.y < _puckBoundary.Down)
             {
                 // Setting the movement speed randomly:
-                movementSpeed = MaxMovementSpeed * Random.Range(0.1f, 0.3f);
+                movementSpeed = maxMovementSpeed * Random.Range(0.1f, 0.3f);
                 // Setting the target position:
-                targetPosition = new Vector2(Mathf.Clamp(Puck.position.x, playerBoundary.Left,
-                                                        playerBoundary.Right),
-                                                        startingPosition.y);
+                _targetPosition = new Vector2(Mathf.Clamp(puck.position.x, _playerBoundary.Left,
+                                                        _playerBoundary.Right),
+                                                        _startingPosition.y);
             }
             else
             {
-                movementSpeed = Random.Range(MaxMovementSpeed * 0.4f, MaxMovementSpeed);
-                targetPosition = new Vector2(Mathf.Clamp(Puck.position.x, playerBoundary.Left,
-                                                        playerBoundary.Right),
-                                                        Mathf.Clamp(Puck.position.y, playerBoundary.Down,
-                                                        playerBoundary.Up));
+                movementSpeed = Random.Range(maxMovementSpeed * 0.4f, maxMovementSpeed);
+                _targetPosition = new Vector2(Mathf.Clamp(puck.position.x, _playerBoundary.Left,
+                                                        _playerBoundary.Right),
+                                                        Mathf.Clamp(puck.position.y, _playerBoundary.Down,
+                                                        _playerBoundary.Up));
             }// End if else
 
             // Making the Ai move the distance of movement speed over the course of 1 second. 
             // This stops the AI pusher jumping stright to the puck.
-            rb.MovePosition(Vector2.MoveTowards(rb.position, targetPosition,
+            _rb.MovePosition(Vector2.MoveTowards(_rb.position, _targetPosition,
                                                 movementSpeed * Time.fixedDeltaTime));
         }// end if
     }// End FixedUpdate Function
@@ -81,6 +83,6 @@ public class AiScript : MonoBehaviour
     // Function the reset the position of the ai pusher:
     public void ResetPosition()
     {
-        rb.position = startingPosition;
+        _rb.position = _startingPosition;
     }// End reset function
 }// End class

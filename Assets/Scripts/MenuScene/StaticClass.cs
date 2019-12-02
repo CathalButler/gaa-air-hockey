@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿
 
 /**
  * Cathal Butler | G00346889
@@ -8,7 +6,10 @@ using UnityEngine;
  * https://stackoverflow.com/questions/42393259/load-scene-with-param-variable-unity
  */
 
-public static class StaticClass
-{   
-    public static string CrossSceneInformation { get; set; }
+namespace MenuScene
+{
+    public static class StaticClass
+    {   
+        public static string CrossSceneInformation { get; set; }
+    }
 }
