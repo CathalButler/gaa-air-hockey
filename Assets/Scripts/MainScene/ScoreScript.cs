@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class ScoreScript : MonoBehaviour
 {
+    //Member Varaibles
     public enum Score{  AiScore, PlayerScore }
     public Text AiScoreText, PlayerScoreText;
     public UiManager uiManager;

@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     bool canMove;
 
     Rigidbody2D rb;
-    Vector2 startingPosition;
+    Vector2 startingPosition;   
 
     // Boundary Holder to apply the game object boundary holder to this PlayerMovement Script:  
     public Transform BoundaryHolder;
@@ -53,10 +53,6 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        
-
-
         if (Input.GetMouseButton(0))
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
