@@ -58,7 +58,7 @@ public class UiManager : MonoBehaviour
         Time.timeScale = 0;
         // Hide game canvas:
         GameCanvas.SetActive(false);
-        
+
         // Display Pause canvas
         PauseCanvas.SetActive(true);
 

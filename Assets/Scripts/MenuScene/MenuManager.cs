@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 /**
  * Cathal Butler | G00346889
@@ -10,8 +11,11 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-    public void Play()
+    // Function to start the game and also set the name of the team they picked:
+    public void Play(string playerTeam)
     {
+        //Set team name in a static class so it can be accessed in other scripts
+        StaticClass.CrossSceneInformation = playerTeam;
         //Load main game sence:
         SceneManager.LoadScene("main");
 
@@ -22,4 +26,6 @@ public class MenuManager : MonoBehaviour
         Debug.Log("QUIT!");
         Application.Quit();
     }//End function
+
+
 }//End class

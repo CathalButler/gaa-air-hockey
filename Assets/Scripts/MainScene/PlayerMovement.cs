@@ -19,11 +19,24 @@ public class PlayerMovement : MonoBehaviour
 
     Collider2D playerCollider;
 
+    SpriteRenderer rend;
+    Sprite mayo, dublin, meath, roscommon, donegal, tyrone, kerry, cork;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        playerCollider = GetComponent<Collider2D>();
+
+        Debug.Log(StaticClass.CrossSceneInformation);
+
+        rend = GetComponent<SpriteRenderer>();
+
+        //mayo = Resources.Load<Sprite>("MayoPusher");
+
+        //TODO: Add sprite rendering to this function as its neeed for the player pusher then assign collider2D to it and boundary
+        //mayo = Color.blue;
+
+        playerCollider = GetComponent<Collider2D>();    
         // Asigning Rigidbody to game object this script set on.
         rb = GetComponent<Rigidbody2D>();
         startingPosition = rb.position;
@@ -34,11 +47,16 @@ public class PlayerMovement : MonoBehaviour
                                         BoundaryHolder.GetChild(2).position.x,
                                         BoundaryHolder.GetChild(3).position.x);
 
+
     }// End start
 
     // Update is called once per frame
     void Update()
     {
+
+        
+
+
         if (Input.GetMouseButton(0))
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -48,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
                 wasJustClicked = false;
 
                 // If the player asset was clicked from inside the transform axis the player can then move.
-                if(playerCollider.OverlapPoint(mousePos))
+                if (playerCollider.OverlapPoint(mousePos))
                 {
                     canMove = true;
                 }
@@ -77,5 +95,10 @@ public class PlayerMovement : MonoBehaviour
     public void ResetPosition()
     {
         rb.position = startingPosition;
+    }
+
+    public void getTeamSprite()
+    {
+
     }
 }// End class
