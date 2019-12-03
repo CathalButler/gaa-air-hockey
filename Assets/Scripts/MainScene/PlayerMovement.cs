@@ -1,5 +1,5 @@
-﻿using MenuScene;
-using Types;
+﻿using MainScene.Types;
+using MenuScene;
 using UnityEngine;
 using UnityEngine.Serialization;
 

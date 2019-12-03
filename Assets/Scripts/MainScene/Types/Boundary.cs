@@ -1,5 +1,5 @@
 ﻿    // A struct to group up, down, left & right floating point numbers:
-    namespace Types
+    namespace MainScene.Types
     {
         struct Boundary
         {
@@ -12,5 +12,5 @@
                 Up = up; Down = down; Left = left; Right = right;
             }// End Constrcutor
 
-        }
-    }//End Struct
+        }//End Struct
+    }//End namespace

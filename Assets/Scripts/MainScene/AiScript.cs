@@ -1,4 +1,4 @@
-﻿using Types;
+﻿using MainScene.Types;
 using UnityEngine;
 using UnityEngine.Serialization;
 

@@ -277,10 +277,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1872313784}
         m_MethodName: Play
-        m_Mode: 5
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 21300000, guid: 8ae093a91841e9759b030da035a2fcf8,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: meath
@@ -377,7 +378,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c6abed27aa6e576888e1662d6201d68c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7e2d2f86281d7c3a3a53aa25c7df0fcd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -861,10 +862,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1872313784}
         m_MethodName: Play
-        m_Mode: 5
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 21300000, guid: 60514b2d9663dc3ae93f013447c38e5e,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: kerry
@@ -990,10 +992,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1872313784}
         m_MethodName: Play
-        m_Mode: 5
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 21300000, guid: ad1d2b35b98e7c94abad20d097cad86e,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: roscommon
@@ -1119,10 +1122,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1872313784}
         m_MethodName: Play
-        m_Mode: 5
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 21300000, guid: ae916879d0b023d56bd887991b907dd3,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: mayo
@@ -1757,7 +1761,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 83ba9b2c5bbc2b7f89a51a3cb764b24b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c48bd5e884c869f5baec13e24d6e5236, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
@@ -2360,10 +2364,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1872313784}
         m_MethodName: Play
-        m_Mode: 5
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 21300000, guid: 37d847326ba318556bfef4e422c6a25c,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: tyrone
@@ -2628,10 +2633,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1872313784}
         m_MethodName: Play
-        m_Mode: 5
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 21300000, guid: be7eea41618a6b5a8bced98600334187,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: cork
@@ -3351,10 +3357,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1872313784}
         m_MethodName: Play
-        m_Mode: 5
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 21300000, guid: d38557e7801708272acfcd7015114d60,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: dublin
@@ -3697,10 +3704,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1872313784}
         m_MethodName: Play
-        m_Mode: 5
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 21300000, guid: 65216eb142ff00b009a2f7c8c648a255,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: donegal

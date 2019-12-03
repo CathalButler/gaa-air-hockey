@@ -175,12 +175,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 297706fe6ce17453f86e6e56aa764dd9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c4931dddb640c4a73a2a691f0339df70, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.2, y: 1.33}
+  m_Size: {x: 1.33, y: 2.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -2092,12 +2092,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 016430e911af5b3a1a9315def5c2544e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1ee72b24b88aabe15b4cbbf2c56f669b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5, y: 1.8}
+  m_Size: {x: 5, y: 1.29}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -2604,14 +2604,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boundaryHolder: {fileID: 1683772302}
-  mayo: {fileID: 21300000, guid: 4e1297892e77900dbb9577a0df7fe2b9, type: 3}
-  dublin: {fileID: 21300000, guid: 0027832b1061ee1369a7c07322821c31, type: 3}
-  meath: {fileID: 21300000, guid: d73990ac9bb542157a86c21e02af15d0, type: 3}
-  roscommon: {fileID: 21300000, guid: c82154b8ec96fc8f0ad462a7ef83428f, type: 3}
-  donegal: {fileID: 21300000, guid: a32eaa6d16f2e22f4aea19b886df2033, type: 3}
-  tyrone: {fileID: 21300000, guid: 404865b59b71458de9c015092a53b694, type: 3}
-  kerry: {fileID: 21300000, guid: 91c3928c47dd3d6d880d02cdf2f11391, type: 3}
-  cork: {fileID: 21300000, guid: 756ddfea9ffbf59d991984d37d1d5a69, type: 3}
 --- !u!58 &1281294102
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2991,12 +2983,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 820f812647cb703288eaf877328151d6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e4b300ac8f404b51a99581c47db5ab3a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.35714287, y: 0.35714287}
+  m_Size: {x: 0.75, y: 0.75}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -3921,12 +3913,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 756ddfea9ffbf59d991984d37d1d5a69, type: 3}
+  m_Sprite: {fileID: 21300000, guid: be7eea41618a6b5a8bced98600334187, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.25, y: 1.25}
+  m_Size: {x: 0.75, y: 0.75}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
