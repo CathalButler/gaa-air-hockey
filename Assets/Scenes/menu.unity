@@ -279,7 +279,7 @@ MonoBehaviour:
         m_MethodName: Play
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 21300000, guid: 8ae093a91841e9759b030da035a2fcf8,
+          m_ObjectArgument: {fileID: 21300000, guid: a2a37bb480a48085a96d9dba52380844,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
           m_IntArgument: 0
@@ -864,7 +864,7 @@ MonoBehaviour:
         m_MethodName: Play
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 21300000, guid: 60514b2d9663dc3ae93f013447c38e5e,
+          m_ObjectArgument: {fileID: 21300000, guid: 74530f78692ddd344ab8caed4f1a8feb,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
           m_IntArgument: 0
@@ -994,7 +994,7 @@ MonoBehaviour:
         m_MethodName: Play
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 21300000, guid: ad1d2b35b98e7c94abad20d097cad86e,
+          m_ObjectArgument: {fileID: 21300000, guid: 5f78416b533c65ca3adbe59c68697898,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
           m_IntArgument: 0
@@ -1124,7 +1124,7 @@ MonoBehaviour:
         m_MethodName: Play
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 21300000, guid: ae916879d0b023d56bd887991b907dd3,
+          m_ObjectArgument: {fileID: 21300000, guid: 161e4a8b18dd04516a58b0fa2366784d,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
           m_IntArgument: 0
@@ -2366,7 +2366,7 @@ MonoBehaviour:
         m_MethodName: Play
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 21300000, guid: 37d847326ba318556bfef4e422c6a25c,
+          m_ObjectArgument: {fileID: 21300000, guid: c638ebb9544bbe18eb6b06db27436e80,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
           m_IntArgument: 0
@@ -2635,7 +2635,7 @@ MonoBehaviour:
         m_MethodName: Play
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 21300000, guid: be7eea41618a6b5a8bced98600334187,
+          m_ObjectArgument: {fileID: 21300000, guid: 5ded7425b350b227aa69c95302f6fb68,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
           m_IntArgument: 0
@@ -3359,7 +3359,7 @@ MonoBehaviour:
         m_MethodName: Play
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 21300000, guid: d38557e7801708272acfcd7015114d60,
+          m_ObjectArgument: {fileID: 21300000, guid: a8ad4b8b0bb91f3e880a0ed65045452c,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
           m_IntArgument: 0
@@ -3706,7 +3706,7 @@ MonoBehaviour:
         m_MethodName: Play
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 21300000, guid: 65216eb142ff00b009a2f7c8c648a255,
+          m_ObjectArgument: {fileID: 21300000, guid: 458b26aeefa7a40cb9d82b112e6290c6,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
           m_IntArgument: 0

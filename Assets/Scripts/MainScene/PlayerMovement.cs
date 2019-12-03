@@ -3,7 +3,7 @@ using MenuScene;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-/* Cathal Butler | G00346889 | Mobile Applcation Development 3 Project.
+/* Cathal Butler | G00346889 | Mobile Application Development 3 Project.
  * PlayerMovement class. This class handles the behaviour of how the player can move in the field.
  */
 
@@ -24,8 +24,10 @@ namespace MainScene
         
         private Collider2D _playerCollider;
         
-        private SpriteRenderer _spriteRenderer; 
-        
+        private SpriteRenderer _spriteRenderer;
+
+        public ScoreScript scoreScript;
+
         // Start is called before the first frame update
         private void Start()
         {
@@ -33,6 +35,11 @@ namespace MainScene
             _spriteRenderer = GetComponent<SpriteRenderer>();
             // Assign the sprite passed when loading main scene
             _spriteRenderer.sprite = StaticSpriteClass.CrossSceneInformation;
+
+            //Log it
+            Debug.Log(_spriteRenderer.sprite.name);
+            //Pass the name of the team onto the UI Manager so it can be displayed
+            scoreScript.SetPlayerTeamName(_spriteRenderer.sprite.name);
             
             //Accessing Collider2D attached to the Gameobject
             _playerCollider = GetComponent<Collider2D>();    

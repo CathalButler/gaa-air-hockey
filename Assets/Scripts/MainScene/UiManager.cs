@@ -2,7 +2,7 @@
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
-/* Cathal Butler | G00346889 | Mobile Applcation Development 3 Project.
+/* Cathal Butler | G00346889 | Mobile Application Development 3 Project.
  * UiManager class. This class handles the behaviour of the game canvas and restart canvas.
  */
 
@@ -70,7 +70,7 @@ namespace MainScene
         //Function that allows the game to be resumes from the pause menu 
         public void ResumeGame()
         {
-            // Contiune game
+            // Continue game
             Time.timeScale = 1;
             //Display Game Canvas
             gameCanvas.SetActive(true);
@@ -103,5 +103,5 @@ namespace MainScene
         {
             SceneManager.LoadScene("menu");
         }//End function
-    }
-}//End class
+    }//End class
+}//End namespace
