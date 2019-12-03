@@ -1,5 +1,7 @@
 ﻿using MainScene.Types;
+using MenuScene;
 using UnityEngine;
+using UnityEngine.Experimental.PlayerLoop;
 using UnityEngine.Serialization;
 
 /* Cathal Butler | G00346889 | Mobile Application Development 3 Project.
@@ -29,10 +31,33 @@ namespace MainScene
         private Boundary _puckBoundary;
 
         private Vector2 _targetPosition;
+        
+        private SpriteRenderer _spriteRenderer;
+        
+        public ScoreScript scoreScript;
+
+        //Array of team sprites
+        public Sprite[] teams;
+        // Assigned team to aiPlayer
+        private Sprite _aiTeam;
+        private int _index;
 
         // Start is called before the first frame update
         private void Start()
         {
+
+            // Accessing the SpriteRenderer that is attached to the Gameobject
+            _spriteRenderer = GetComponent<SpriteRenderer>();
+            //Randomly select a sprite from the array of sprites
+            _aiTeam = RandomTeamSelection();
+            // Assign the sprite passed when loading main scene
+            _spriteRenderer.sprite = _aiTeam;
+
+            //Log the sprite name
+            Debug.Log(_aiTeam.name);
+            //Set the name of the ai team in the score script so it can display in the score canvas
+            scoreScript.SetAiTeamName(_aiTeam.name);
+
             // Setting the rigidbody to the player rigidbody
             _rb = GetComponent<Rigidbody2D>();
             // Setting the starting position to the player rigidbody
@@ -88,5 +113,20 @@ namespace MainScene
         {
             _rb.position = _startingPosition;
         }// End reset function
-    }
-}// End class
+
+        // This function is used to select a random team from the Sprite array with the help of the StaticArrayExtensions.cs
+        // class. If the Sprite that got randomly selected matches the players sprite that they picked when they started the
+        // game, it will run again to pick anything one.
+        private Sprite RandomTeamSelection()
+        {
+            //Variables
+            var temp = teams.GetRandom();
+            
+            // if the sprite randomly selected matches the one the player picked run again:
+            if (temp != StaticSpriteClass.CrossSceneInformation) return temp;
+            temp = teams.GetRandom();
+            return temp;
+
+        }//End function
+    }//End class
+}// End namespace

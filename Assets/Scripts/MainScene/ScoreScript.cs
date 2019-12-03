@@ -80,9 +80,7 @@ namespace MainScene
 
         public void SetAiTeamName(String aiTeamName)
         {
-            
-        }
-
-
+            aiTeamNameText.text = aiTeamName;
+        }//End function
     }//End class
 }// End namespace

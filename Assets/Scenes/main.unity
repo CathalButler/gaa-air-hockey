@@ -3757,15 +3757,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: be7eea41618a6b5a8bced98600334187, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a8ad4b8b0bb91f3e880a0ed65045452c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.75, y: 0.75}
+  m_Size: {x: 1.25, y: 1.25}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1686095463
@@ -3798,6 +3798,16 @@ MonoBehaviour:
   puck: {fileID: 1415359971}
   playerBoundaryHolder: {fileID: 1943325461}
   puckBoundaryHolder: {fileID: 1635407994}
+  scoreScript: {fileID: 496550624}
+  teams:
+  - {fileID: 21300000, guid: 5ded7425b350b227aa69c95302f6fb68, type: 3}
+  - {fileID: 21300000, guid: 458b26aeefa7a40cb9d82b112e6290c6, type: 3}
+  - {fileID: 21300000, guid: a8ad4b8b0bb91f3e880a0ed65045452c, type: 3}
+  - {fileID: 21300000, guid: 74530f78692ddd344ab8caed4f1a8feb, type: 3}
+  - {fileID: 21300000, guid: 161e4a8b18dd04516a58b0fa2366784d, type: 3}
+  - {fileID: 21300000, guid: a2a37bb480a48085a96d9dba52380844, type: 3}
+  - {fileID: 21300000, guid: 5f78416b533c65ca3adbe59c68697898, type: 3}
+  - {fileID: 21300000, guid: c638ebb9544bbe18eb6b06db27436e80, type: 3}
 --- !u!1 &1686815063
 GameObject:
   m_ObjectHideFlags: 0
