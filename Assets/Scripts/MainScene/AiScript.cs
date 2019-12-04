@@ -1,7 +1,6 @@
 ﻿using MainScene.Types;
 using MenuScene;
 using UnityEngine;
-using UnityEngine.Experimental.PlayerLoop;
 using UnityEngine.Serialization;
 
 /* Cathal Butler | G00346889 | Mobile Application Development 3 Project.
@@ -40,36 +39,30 @@ namespace MainScene
         public Sprite[] teams;
         // Assigned team to aiPlayer
         private Sprite _aiTeam;
-        private int _index;
 
         // Start is called before the first frame update
         private void Start()
         {
-
             // Accessing the SpriteRenderer that is attached to the Gameobject
             _spriteRenderer = GetComponent<SpriteRenderer>();
             //Randomly select a sprite from the array of sprites
             _aiTeam = RandomTeamSelection();
             // Assign the sprite passed when loading main scene
             _spriteRenderer.sprite = _aiTeam;
-
-            //Log the sprite name
-            Debug.Log(_aiTeam.name);
             //Set the name of the ai team in the score script so it can display in the score canvas
             scoreScript.SetAiTeamName(_aiTeam.name);
-
             // Setting the rigidbody to the player rigidbody
             _rb = GetComponent<Rigidbody2D>();
             // Setting the starting position to the player rigidbody
             _startingPosition = _rb.position;
-
-            // Setting the boundary cords of the child game objects when the game starts.
-            // Used to keep the player pusher object inside the boundary.
+            // Setting the boundary cords for the movable area for the AI Player
+            // Used to keep the AI player pusher object inside their the boundary.
             _playerBoundary = new Boundary(playerBoundaryHolder.GetChild(0).position.y,
                 playerBoundaryHolder.GetChild(1).position.y,
                 playerBoundaryHolder.GetChild(2).position.x,
                 playerBoundaryHolder.GetChild(3).position.x);
-            // Used to keep the puck object inside the boundary.
+            // Used to keep the puck object inside the boundary play area boundary, there boundary's holders are right
+            // the edges on the ai player size.
             _puckBoundary = new Boundary(puckBoundaryHolder.GetChild(0).position.y,
                 puckBoundaryHolder.GetChild(1).position.y,
                 puckBoundaryHolder.GetChild(2).position.x,
@@ -78,7 +71,7 @@ namespace MainScene
 
         private void FixedUpdate()
         {    
-            //Return if a goal was scored
+            //Return if a goal was scored, this stops the ai player moving when a goal is scored
             if (PuckScript.WasGoal) return;
         
             //Variables
@@ -95,7 +88,9 @@ namespace MainScene
             }
             else
             {
+                // Setting the movement speed randomly:
                 movementSpeed = Random.Range(maxMovementSpeed * 0.4f, maxMovementSpeed);
+                // Setting the target position:
                 _targetPosition = new Vector2(Mathf.Clamp(puck.position.x, _playerBoundary.Left,
                         _playerBoundary.Right),
                     Mathf.Clamp(puck.position.y, _playerBoundary.Down,

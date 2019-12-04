@@ -28,41 +28,42 @@ namespace MainScene
 
         public ScoreScript scoreScript;
 
+        public Sprite sprite;
+
         // Start is called before the first frame update
         private void Start()
         {
             // Accessing the SpriteRenderer that is attached to the Gameobject
             _spriteRenderer = GetComponent<SpriteRenderer>();
             // Assign the sprite passed when loading main scene
-            _spriteRenderer.sprite = StaticSpriteClass.CrossSceneInformation;
-
-            //Log it
-            Debug.Log(_spriteRenderer.sprite.name);
+            _spriteRenderer.sprite = StaticSpriteClass.CrossSceneInformation == null ? sprite : StaticSpriteClass.CrossSceneInformation;
             //Pass the name of the team onto the UI Manager so it can be displayed
             scoreScript.SetPlayerTeamName(_spriteRenderer.sprite.name);
-            
-            //Accessing Collider2D attached to the Gameobject
-            _playerCollider = GetComponent<Collider2D>();    
             // Assigning Rigidbody to game object this script set on.
             _rb = GetComponent<Rigidbody2D>();
+            //Accessing Collider2D attached to the Gameobject
+            _playerCollider = GetComponent<Collider2D>();
             _startingPosition = _rb.position;
             //Setting the boundary cords of the child game objects when the game starts.
             // Used to keep the player pusher object inside the boundary.
             _playerBoundary = new Boundary(boundaryHolder.GetChild(0).position.y,
                 boundaryHolder.GetChild(1).position.y,
-                boundaryHolder.GetChild(2).position.x,
+                boundaryHolder.GetChild(2).position.x,        
                 boundaryHolder.GetChild(3).position.x);
-
         }// End start
 
         // Update is called once per frame
         private void Update()
         {
-            if (Input.GetMouseButton(0))
+            if (Input.GetMouseButton(0)) 
             {
-                //Setting world cords
+                // NOTE: Issue when the cameras projection is set to 'Perspective', keep as 'Orthographic'
+                //Setting world cords, need to covert from screen cords as this varies depending on resolution
                 Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
+                
+                //If statement to check if the player object was just clicked, this is to stop a player pressing a point
+                // in the world cords and the pusher jumping to that point
+                //The pusher must be dragged to that point
                 if (_wasJustClicked)
                 {
                     _wasJustClicked = false;
@@ -85,7 +86,7 @@ namespace MainScene
                     Mathf.Clamp(mousePos.y, _playerBoundary.Down,
                         _playerBoundary.Up));
                 _rb.MovePosition(clampedMousePos);
-            }
+            }//end if
             else
             {
                 _wasJustClicked = true;

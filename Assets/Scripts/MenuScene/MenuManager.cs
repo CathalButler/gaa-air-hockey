@@ -16,7 +16,7 @@ namespace MenuScene
         {
             //Set team name in a static class so it can be accessed in other scripts
             StaticSpriteClass.CrossSceneInformation = playerPusher;
-            //Load main game sence:
+            //Load main game sense:
             SceneManager.LoadScene("main");
 
         }//End play function

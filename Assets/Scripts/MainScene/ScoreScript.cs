@@ -73,12 +73,12 @@ namespace MainScene
             aiScoreText.text = playerScoreText.text = "0";
         }//End Reset Score function
 
-        public void SetPlayerTeamName(String playerTeamName)
+        public void SetPlayerTeamName(string playerTeamName)
         {
             playerTeamNameText.text = playerTeamName;
         }//End function
 
-        public void SetAiTeamName(String aiTeamName)
+        public void SetAiTeamName(string aiTeamName)
         {
             aiTeamNameText.text = aiTeamName;
         }//End function

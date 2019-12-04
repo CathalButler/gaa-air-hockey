@@ -13,5 +13,5 @@ namespace MenuScene
     public static class StaticSpriteClass
     {   
         public static Sprite CrossSceneInformation { get; set; }
-    }
-}
+    }//End class
+}//End namespace
