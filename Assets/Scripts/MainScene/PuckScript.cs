@@ -54,15 +54,9 @@ namespace MainScene
             // Reset velocity and position to 0
             _rb.velocity = _rb.position = new Vector2(0, 0);
 
-            if(didPlayerScore)
-            {
-                // Spawn the puck on the AI side of the field
-                _rb.position = new Vector2(0, 1);
-            }else
-            {
-                // Else Spawn on the player side of the field
-                _rb.position = new Vector2(0, -1);
-            }
+            // Spawn the puck on the AI side of the field
+            // Else Spawn on the player side of the field
+            _rb.position = didPlayerScore ? new Vector2(0, 1) : new Vector2(0, -1);
         }// End ResetPuck function
 
         public void RecenterPuck()

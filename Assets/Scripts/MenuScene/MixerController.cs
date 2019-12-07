@@ -9,7 +9,7 @@ namespace MenuScene
 
         public void SetMasterAudio(float volume)
         {
-            audioMixer.SetFloat("MyExposedParam", volume);
-        }
-    }
-}
+            audioMixer.SetFloat("volume", volume);
+        }//End function
+    }//End class
+}//End namespace

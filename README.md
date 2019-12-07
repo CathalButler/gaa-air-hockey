@@ -5,7 +5,7 @@ The game GAA Air Hockey which I am developing but was designed by Andreas Fahey 
 [GAA](https://www.gaa.ie/)
 > The Gaelic Athletic Association is an Irish international amateur sporting and cultural organisation, focused primarily on promoting indigenous Gaelic games and pastimes, which include the traditional Irish sports of hurling, camogie, Gaelic football, Gaelic handball and rounders
 
-## Game Requirments
+## Game Requirements
 After being issued the game design document from the designer we were required by the lecture to have the following
 
 * Menu System – Splash Screen, Introduction, Preferences, Scores, Tutorials
