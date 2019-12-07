@@ -10,6 +10,7 @@ namespace MainScene
 {
     public class UiManager : MonoBehaviour
     {
+        //Member Variables
         [FormerlySerializedAs("GameCanvas")] [Header("Canvas")]
         public GameObject gameCanvas;
         [FormerlySerializedAs("RestartCanvas")] public GameObject restartCanvas;

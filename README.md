@@ -28,7 +28,7 @@ Please refer to the [wiki](https://github.com/butlawr/gaa-air-hockey/wiki/Develo
 ## Development & Testing Environment
 * OS: [Manjaro Linux](https://manjaro.org/download/official/kde/)
 * Kernel: 5.3.12
-* [Unity](https://unity.com/) 2019.2.6f1
+* [Unity](https://unity.com/) 2019.2.6f1 -> 2019.3.0f1
   * JDK 8
   * Android SDK
 * [Visual Studio Code](https://code.visualstudio.com/)

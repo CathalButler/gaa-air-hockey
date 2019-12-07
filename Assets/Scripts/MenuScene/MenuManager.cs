@@ -26,6 +26,5 @@ namespace MenuScene
             Debug.Log("QUIT!");
             Application.Quit();
         }//End function
-
     }//End class
 }//End namespace

@@ -15,7 +15,7 @@ namespace MainScene
         // Player and ai score text objects that are in the in-game canvas. Used to update score 
         [FormerlySerializedAs("AiScoreText")] public Text aiScoreText;
         [FormerlySerializedAs("PlayerScoreText")] public Text playerScoreText;
-        // PLayer and ai team text objects that are in the in-game canvas. Used to set the team names beside the scores
+        // Player and ai team text objects that are in the in-game canvas. Used to set the team names beside the scores
         public Text aiTeamNameText;
         public Text playerTeamNameText;
         //UiManager to add the scene manager too
