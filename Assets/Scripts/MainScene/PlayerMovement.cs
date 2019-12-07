@@ -11,10 +11,11 @@ namespace MainScene
 {
     public class PlayerMovement : MonoBehaviour
     {
+        
         // Member Variables
         private bool _wasJustClicked = true;
         private bool _canMove;
-
+        
         private Rigidbody2D _rb;
         private Vector2 _startingPosition;   
 

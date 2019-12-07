@@ -1,6 +1,4 @@
-﻿using System;
-using System.Net.Mime;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
