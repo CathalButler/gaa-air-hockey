@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
@@ -19,6 +20,8 @@ namespace MainScene
         [FormerlySerializedAs("WinText")] [Header("Restart Canvas")]
         public GameObject winText;
         [FormerlySerializedAs("LooseText")] public GameObject looseText;
+
+        [Header("Audio")] public AudioMixer audioMixer;
 
         [Header("Other")]
         public ScoreScript scoreScript;
@@ -104,5 +107,23 @@ namespace MainScene
         {
             SceneManager.LoadScene("menu");
         }//End function
+
+        //Function for setting the master audio level in-game in the settings menu
+        public void SetMasterAudio(float volume)
+        {
+            audioMixer.SetFloat("volume", volume);
+        }//Edd function
+    
+        //Function for setting the music audio level in-game in the settings menu
+        public void SetMusicAudio(float volume)
+        {
+            audioMixer.SetFloat("music", volume);
+        }//End function
+
+        //Function for setting the sfx audio level in-game in the settings menu
+        public void SetSfxAudio(float volume)
+        {
+            audioMixer.SetFloat("sfx", volume);
+        }//End fucntion
     }//End class
 }//End namespace
