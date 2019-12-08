@@ -16,19 +16,18 @@ namespace MainScene
         private bool _wasJustClicked = true;
         private bool _canMove;
         
+        private Vector2 _startingPosition;
         private Rigidbody2D _rb;
-        private Vector2 _startingPosition;   
-
         // Boundary Holder to apply the game object boundary holder to this PlayerMovement Script:  
         [FormerlySerializedAs("BoundaryHolder")] public Transform boundaryHolder;
         private Boundary _playerBoundary;
-        
+        // Collider for detecting collisions
         private Collider2D _playerCollider;
-        
+        // Sprite render for assigning a game sprite to
         private SpriteRenderer _spriteRenderer;
-
+        //Scorescript so it can be assigned and used within this class
         public ScoreScript scoreScript;
-
+        // Sprite so one can be assigned to it
         public Sprite sprite;
 
         // Start is called before the first frame update

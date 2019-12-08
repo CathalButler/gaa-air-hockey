@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
 /* Cathal Butler | G00346889 | Mobile Application Development 3 Project.
- * UiManager class. This class handles the behaviour of the game canvas and restart canvas.
+ * UiManager class. This class handles the behaviour of the game canvases and audio.
  */
 
 namespace MainScene
@@ -32,7 +32,7 @@ namespace MainScene
 
 
         //Function to display Restart game canvas:
-        // This function is called from score script once 5 goels by either player or ai has been scored:
+        // This function is called from score script once 5 goals by either player or ai has been scored:
         public void ShowRestartCanvas(bool didAiWin)
         {
             // Freeze the game:
@@ -119,11 +119,5 @@ namespace MainScene
         {
             audioMixer.SetFloat("music", volume);
         }//End function
-
-        //Function for setting the sfx audio level in-game in the settings menu
-        public void SetSfxAudio(float volume)
-        {
-            audioMixer.SetFloat("sfx", volume);
-        }//End fucntion
     }//End class
 }//End namespace

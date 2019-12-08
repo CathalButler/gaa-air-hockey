@@ -17,18 +17,14 @@ namespace MainScene
         private Rigidbody2D _rb;
         // AI Starting position
         private Vector2 _startingPosition;
-
         [FormerlySerializedAs("Puck")] public Rigidbody2D puck;
-
         // AI Player boundary holder
         [FormerlySerializedAs("PlayerBoundaryHolder")] public Transform playerBoundaryHolder;
         // AI Player boundary
         private Boundary _playerBoundary;
-
-
         [FormerlySerializedAs("PuckBoundaryHolder")] public Transform puckBoundaryHolder;
         private Boundary _puckBoundary;
-
+        
         private Vector2 _targetPosition;
         
         private SpriteRenderer _spriteRenderer;
@@ -61,8 +57,8 @@ namespace MainScene
                 playerBoundaryHolder.GetChild(1).position.y,
                 playerBoundaryHolder.GetChild(2).position.x,
                 playerBoundaryHolder.GetChild(3).position.x);
-            // Used to keep the puck object inside the boundary play area boundary, there boundary's holders are right
-            // the edges on the ai player size.
+            // Used to keep the puck object inside the boundary play area boundary, there boundary's holders are on all
+            // sides of the ai player size.
             _puckBoundary = new Boundary(puckBoundaryHolder.GetChild(0).position.y,
                 puckBoundaryHolder.GetChild(1).position.y,
                 puckBoundaryHolder.GetChild(2).position.x,

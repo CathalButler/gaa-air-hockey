@@ -1,6 +1,7 @@
 # Final Year Mobile Application Development Project
 ## Introduction
-The game GAA Air Hockey which I am developing but was designed by Andreas Fahey another student is an air hockey-like game but themed around GAA which is the Gaelic Athletic Association. 
+The game GAA Air Hockey which I am developing but was designed by Andreas Fahey another student is an air hockey-like game but themed around GAA which is the Gaelic Athletic Association.
+### [Game Design Doc]()
 
 [GAA](https://www.gaa.ie/)
 > The Gaelic Athletic Association is an Irish international amateur sporting and cultural organisation, focused primarily on promoting indigenous Gaelic games and pastimes, which include the traditional Irish sports of hurling, camogie, Gaelic football, Gaelic handball and rounders
@@ -35,7 +36,12 @@ Please refer to the [wiki](https://github.com/butlawr/gaa-air-hockey/wiki/Develo
 * [JetBrains Rider](https://www.jetbrains.com/rider/) 2019.2.3
 Build #RD-192.7317.11, built on October 16, 2019
 * dotnet [SDK 2.2.108](https://docs.microsoft.com/en-us/dotnet/core/install/linux-package-manager-rhel7)
-
+* Samsung SM-G360f
+    - Android version 5.0.2
+* Samsung S7
+    - Android version 8.0
+    
+ 
 ## Contact Information:
 * Cathal Butler
 * G00346889@gmit.ie
