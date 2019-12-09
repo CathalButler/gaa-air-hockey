@@ -65,7 +65,6 @@ namespace MainScene
             Time.timeScale = 0;
             // Hide game canvas:
             gameCanvas.SetActive(false);
-
             // Display Pause canvas
             pauseCanvas.SetActive(true);
 

@@ -43,13 +43,15 @@ namespace MainScene
                     WasGoal = true;
                     StartCoroutine(ResetPuck(true)); // end if, else if
                     break;
-            }
+            }//End switch statement
         }// ENd OnTriggerEnter2D function
 
         //Function the reset the pucks position and velocity after a goal has been scored:
         private IEnumerator ResetPuck(bool didPlayerScore)
         {
+            // wait a second before reset
             yield return new WaitForSecondsRealtime(1);
+            //reset was goal to false
             WasGoal = false;
             // Reset velocity and position to 0
             _rb.velocity = _rb.position = new Vector2(0, 0);

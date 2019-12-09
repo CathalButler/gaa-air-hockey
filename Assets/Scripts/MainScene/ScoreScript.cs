@@ -54,13 +54,9 @@ namespace MainScene
         public void Increment(Score whichScore)
         {
             if (whichScore == Score.AiScore)
-            {
                 aiScoreText.text = (++AiScore).ToString();
-            }
             else
-            {
                 playerScoreText.text = (++PlayerScore).ToString();
-            }// End if else
         }//End increment function
 
         // Function to reset the scores of both ai and player:

@@ -11,7 +11,7 @@ namespace MainScene
 {
     public class AiScript : MonoBehaviour
     {
-
+        //Member Variables
         [FormerlySerializedAs("MaxMovementSpeed")] public float maxMovementSpeed;
         // AI Rigidbody
         private Rigidbody2D _rb;
@@ -69,10 +69,9 @@ namespace MainScene
         {    
             //Return if a goal was scored, this stops the ai player moving when a goal is scored
             if (PuckScript.WasGoal) return;
-        
             //Variables
             float movementSpeed;
-            // If the puck is on the other half of the playing field, only move along the xais:
+            // If the puck is on the other half of the playing field, only move along the x-ais:
             if (puck.position.y < _puckBoundary.Down)
             {
                 // Setting the movement speed randomly:
@@ -87,14 +86,16 @@ namespace MainScene
                 // Setting the movement speed randomly:
                 movementSpeed = Random.Range(maxMovementSpeed * 0.4f, maxMovementSpeed);
                 // Setting the target position:
-                _targetPosition = new Vector2(Mathf.Clamp(puck.position.x, _playerBoundary.Left,
+                _targetPosition = new Vector2(Mathf.Clamp(
+                        puck.position.x, 
+                        _playerBoundary.Left, 
                         _playerBoundary.Right),
-                    Mathf.Clamp(puck.position.y, _playerBoundary.Down,
+                        Mathf.Clamp(puck.position.y, _playerBoundary.Down,
                         _playerBoundary.Up));
-            }// End if else
+            } // End if else
 
             // Making the Ai move the distance of movement speed over the course of 1 second. 
-            // This stops the AI pusher jumping stright to the puck.
+            // This stops the AI pusher jumping straight to the puck
             _rb.MovePosition(Vector2.MoveTowards(_rb.position, _targetPosition,
                 movementSpeed * Time.fixedDeltaTime));
         }// End FixedUpdate Function
@@ -117,7 +118,6 @@ namespace MainScene
             if (temp != StaticSpriteClass.CrossSceneInformation) return temp;
             temp = teams.GetRandom();
             return temp;
-
         }//End function
     }//End class
 }// End namespace

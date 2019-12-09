@@ -48,7 +48,7 @@ namespace MainScene
             // Used to keep the player pusher object inside the boundary.
             _playerBoundary = new Boundary(boundaryHolder.GetChild(0).position.y,
                 boundaryHolder.GetChild(1).position.y,
-                boundaryHolder.GetChild(2).position.x,        
+                boundaryHolder.GetChild(2).position.x,
                 boundaryHolder.GetChild(3).position.x);
         }// End start
 
@@ -67,17 +67,10 @@ namespace MainScene
                 if (_wasJustClicked)
                 {
                     _wasJustClicked = false;
-
                     // If the player asset was clicked from inside the transform axis the player can then move.
-                    if (_playerCollider.OverlapPoint(mousePos))
-                    {
-                        _canMove = true;
-                    }
-                    else
-                    {
-                        // If it is not within the assets transform axis then the player cannot move.
-                        _canMove = false;
-                    }// End if else for can move when clicked
+                    // else you can not move
+                    _canMove = _playerCollider.OverlapPoint(mousePos);
+                    // End if else for can move when clicked
                 }// End if
 
                 if (!_canMove) return;
@@ -88,9 +81,7 @@ namespace MainScene
                 _rb.MovePosition(clampedMousePos);
             }//end if
             else
-            {
                 _wasJustClicked = true;
-            }// End else
         }// End Update Function
 
         //Function which will reset the puck to the starting position when the game restarts 
