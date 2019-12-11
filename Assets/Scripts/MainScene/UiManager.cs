@@ -101,6 +101,12 @@ namespace MainScene
             aiScript.ResetPosition();
         }// End function
 
+        //Function that will allow the player reset the puck if it bugs out in game
+        public void ResetPuck()
+        {
+            puckScript.ResetPuckInGame();
+        }//End function
+
         //Function that will load menu scene, this will be used if the menu button is pressed in end game menu or pause menu
         public void ReturnToMainMenu()
         {

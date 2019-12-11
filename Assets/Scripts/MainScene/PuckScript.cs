@@ -61,6 +61,13 @@ namespace MainScene
             _rb.position = didPlayerScore ? new Vector2(0, 1) : new Vector2(0, -1);
         }// End ResetPuck function
 
+        //Function that will allow the player reset the puck if it bugs out in game
+        public void ResetPuckInGame()
+        {
+            // Reset velocity and position to 0
+            _rb.velocity = _rb.position = new Vector2(0, 0);
+        }//End function
+
         public void RecenterPuck()
         {
             //Reset puck to the center of the field:

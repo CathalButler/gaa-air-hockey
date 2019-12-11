@@ -40,6 +40,8 @@ Build #RD-192.7317.11, built on October 16, 2019
     - Android version 5.0.2
 * Samsung S7
     - Android version 8.0
+* OnePlus 6T
+    - Android version 10
     
  
 ## Contact Information:
