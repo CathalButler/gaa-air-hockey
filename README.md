@@ -7,7 +7,7 @@ The game GAA Air Hockey which I am developing but was designed by Andreas Fahey 
 #### Android
 The game was developed for the Android platform, please find the APK here:
 
-###[Releases](https://github.com/butlawr/gaa-air-hockey/releases/tag/1.0)
+###  [Releases](https://github.com/butlawr/gaa-air-hockey/releases/tag/1.0)
 
 ### PC
 Source code is available from cloning this project and opening it in Unity. You many also download and import the package to Unity inside a new 2D project.<br>
@@ -16,8 +16,8 @@ Source code is available from cloning this project and opening it in Unity. You 
         - On Windows the importing package method does not seem to work correctly.
    * Once the project is opened or the package has been imported into a project make sure to set the Game screen view to `Portrait` as the game was developed to be played only in this view.
     
-###[Asset Package](https://github.com/butlawr/gaa-air-hockey/releases/tag/1.0)
-###[Source Code](https://github.com/butlawr/gaa-air-hockey)
+### [Asset Package](https://github.com/butlawr/gaa-air-hockey/releases/tag/1.0)
+### [Source Code](https://github.com/butlawr/gaa-air-hockey)
 
 ## Game Requirements
 Please refer to the [wiki](https://github.com/butlawr/gaa-air-hockey/wiki/home)
