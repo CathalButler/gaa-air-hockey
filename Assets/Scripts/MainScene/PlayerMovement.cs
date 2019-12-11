@@ -11,11 +11,7 @@ namespace MainScene
 {
     public class PlayerMovement : MonoBehaviour
     {
-        
         // Member Variables
-        private bool _wasJustClicked = true;
-        private bool _canMove;
-        
         private Vector2 _startingPosition;
         private Rigidbody2D _rb;
         // Boundary Holder to apply the game object boundary holder to this PlayerMovement Script:  
@@ -28,7 +24,9 @@ namespace MainScene
         //Scorescript so it can be assigned and used within this class
         public ScoreScript scoreScript;
         // Sprite so one can be assigned to it
-        public Sprite sprite;
+        public Sprite sprite; 
+        private bool _wasJustClicked = true;
+        private bool _canMove;
 
         // Start is called before the first frame update
         private void Start()

@@ -2,9 +2,11 @@
 using MenuScene;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.XR;
 
 /* Cathal Butler | G00346889 | Mobile Application Development 3 Project.
  * AiScript class. This class handles the behaviour of the AI player.
+ * Adapter from https://www.youtube.com/watch?v=67Seb_GJlpc
  */
 
 namespace MainScene
@@ -24,7 +26,7 @@ namespace MainScene
         private Boundary _playerBoundary;
         [FormerlySerializedAs("PuckBoundaryHolder")] public Transform puckBoundaryHolder;
         private Boundary _puckBoundary;
-        
+
         private Vector2 _targetPosition;
         
         private SpriteRenderer _spriteRenderer;

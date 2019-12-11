@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using MainScene.Types;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -17,6 +19,7 @@ namespace MainScene
         public static bool WasGoal { get; private set; }
         private Rigidbody2D _rb;
         public float maxSpeed;
+        private Boundary _puckBoundary;
 
         private void Start()
         {
@@ -44,6 +47,7 @@ namespace MainScene
                     StartCoroutine(ResetPuck(true)); // end if, else if
                     break;
             }//End switch statement
+            
         }// ENd OnTriggerEnter2D function
 
         //Function the reset the pucks position and velocity after a goal has been scored:
