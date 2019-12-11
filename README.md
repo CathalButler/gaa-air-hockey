@@ -25,6 +25,8 @@ in the game and if something was missing we must meet with the design of the gam
 ## Developer Diary 
 Please refer to the [wiki](https://github.com/butlawr/gaa-air-hockey/wiki/Developer-Diary) for information regarding the development of this project
 
+## Testing
+Test cases for the game can be found [here](https://github.com/butlawr/gaa-air-hockey/blob/master/uploads/air_gaa_testcases.xlsx) done on a excel sheet.
 
 ## Development & Testing Environment
 * OS: [Manjaro Linux](https://manjaro.org/download/official/kde/)
