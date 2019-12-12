@@ -9,11 +9,11 @@ The game was developed for the Android platform, please find the APK here:
 
 ###  [Releases](https://github.com/butlawr/gaa-air-hockey/releases/tag/1.0)
 
-### PC
+### Linux
 Source code is available from cloning this project and opening it in Unity. You may also download and import the package to Unity inside a new 2D project.<br>
    * NOTE: The application was developed as an Android build within Unity on Linux, please take this into account when using it on Windows.<br>
         - On Linux package imports and works as it should.
-        - On Windows the importing package method does not seem to work correctly.
+        - On Windows the importing package method does not seem to work correctly, I beieve.
    * Once the project is opened or the package has been imported into a project make sure to set the Game screen view to `Portrait` as the game was developed to be played only in this view.
     
 ### [Asset Package](https://github.com/butlawr/gaa-air-hockey/releases/tag/1.0)
